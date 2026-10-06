@@ -125,7 +125,7 @@ public class Main {
 
     private static String performAttack(Champion attacker, Champion defender, Ability ability) {
         String result = attacker.name + " verwendet " + ability.name + ". ";
-        int hitChance = 30 + attacker.accuracy * 5 + ability.accuracyBonus;
+        int hitChance = 70 + attacker.accuracy * 3 + ability.accuracyBonus;
         if (hitChance < 5) {
             hitChance = 5;
         }
@@ -136,7 +136,7 @@ public class Main {
             return result + attacker.name + " verfehlt den Angriff.";
         }
 
-        int dodgeChance = 20 + defender.speed * 5;
+        int dodgeChance = 5 + defender.speed;
         if (random(dodgeChance)) {
             return result + defender.name + " weicht dem Angriff aus.";
         }
